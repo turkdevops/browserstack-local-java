@@ -79,7 +79,9 @@ class LocalBinary {
             binFileName = "BrowserStackLocal-darwin-x64";
         } else if (osname.contains("linux")) {
             String arch = System.getProperty("os.arch");
-            if (arch.contains("64")) {
+            if (arch.contains("aarch64")) {
+                binFileName = "BrowserStackLocal-linux-arm64";
+            } else if (arch.contains("64")) {
                 if (isAlpine()) {
                     binFileName = "BrowserStackLocal-alpine";
                 } else {
