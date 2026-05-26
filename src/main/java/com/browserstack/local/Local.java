@@ -159,7 +159,7 @@ public class Local {
             if (IGNORE_KEYS.contains(parameter)) {
                 continue;
             }
-            if (avoidValueParameters.get(parameter) != null && opt.getValue().trim().toLowerCase() != "false") {
+            if (avoidValueParameters.get(parameter) != null && !"false".equals(opt.getValue().trim().toLowerCase())) {
                 command.add(avoidValueParameters.get(parameter));
             } else {
                 if (parameters.get(parameter) != null) {
